@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Soroban Guard Kit
 
-## Getting Started
+Soroban Guard Kit is an open-source security and readiness toolkit for Stellar and Soroban projects. It helps maintainers prepare repositories for audits, contributor-driven work, documentation review, testing readiness, and production-readiness discussions.
 
-First, run the development server:
+Built by SorobanGuard Labs. This project is independent and is not officially affiliated with Stellar, Soroban, Drips Wave, or GrantFox.
+
+## Why it exists
+
+Soroban maintainers often need to turn broad security concerns into concrete evidence: tests, docs, issue scopes, operational notes, and review checklists. Soroban Guard Kit gives teams a reusable starting point for that work, especially when repositories are participating in issue-based contribution programs.
+
+## Features
+
+- Landing page explaining the project and workflows.
+- Toolkit page with audit readiness, security checklist, risk score, issue generator, and test readiness panels.
+- Risk scoring logic from 0 to 100.
+- Soroban-oriented security rules and readiness prompts.
+- Contributor-ready issue generation with labels and acceptance criteria.
+- Practical docs and reusable Markdown templates.
+- Vitest and React Testing Library coverage for logic, hooks, and components.
+- GitHub Actions CI for lint, typecheck, test, and build.
+
+## Tech stack
+
+Next.js, React, TypeScript, Tailwind CSS, Vitest, React Testing Library, ESLint, and GitHub Actions.
+
+## Quick start
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000.
+
+## Commands
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
+npm run typecheck
+npm run test
+npm run test:watch
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+.github/           Issue templates and CI
+docs/              Practical maintainer documentation
+templates/         Audit, security, test, and PR checklists
+src/components/    Toolkit UI components
+src/hooks/         Readiness and scoring hooks
+src/lib/           Scoring, issue building, and rule logic
+src/pages/         Next.js Pages Router routes
+src/types/         Shared TypeScript models
+tests/             Unit and component tests
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Mock/demo mode
 
-## Learn More
+The project ships in demo mode with sample Soroban readiness data. Configure it with:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_SOROBAN_GUARD_DEMO_MODE=true
+NEXT_PUBLIC_APP_NAME=Soroban Guard Kit
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Demo mode keeps the UI useful before repository scanning, GitHub imports, saved checklists, or external risk index integrations are available.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Audit readiness workflow
 
-## Deploy on Vercel
+1. Review the audit readiness dashboard and identify missing evidence.
+2. Walk through the security checklist for authorization, storage, testing, operations, dependencies, and docs.
+3. Convert gaps into contributor-ready issues with clear files and acceptance criteria.
+4. Use the templates in `templates/` to prepare test evidence, review notes, and PR checks.
+5. Re-run lint, typecheck, tests, and build before sharing a readiness package.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributor guide
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start with `docs/contributor-guide.md` and `CONTRIBUTING.md`. Good issues should be small, reviewable, and tied to one readiness outcome. Security-sensitive findings should avoid public exploit details until maintainers have triaged them.
+
+## Roadmap
+
+- Real repository scanning.
+- GitHub issue import.
+- Saved checklists.
+- Security rule presets.
+- Audit report export.
+- Integration with Soroban Risk Indexer.
+
+## License
+
+MIT. See `LICENSE`.
