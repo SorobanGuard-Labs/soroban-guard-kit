@@ -25,6 +25,15 @@ Next.js, React, TypeScript, Tailwind CSS, Vitest, React Testing Library, ESLint,
 
 ## Quick start
 
+### Using Docker (Recommended)
+You can run the app consistently in a container without installing Node.js locally.
+```bash
+docker-compose up --build
+```
+Open [http://localhost:**3000**.](http://localhost:**3000**.) See Local Development Guide for more details.
+
+### Using Node.js
+
 ```bash
 npm install
 npm run dev
