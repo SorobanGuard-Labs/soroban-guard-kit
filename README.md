@@ -93,3 +93,26 @@ Start with `docs/contributor-guide.md` and `CONTRIBUTING.md`. Good issues should
 ## License
 
 MIT. See `LICENSE`.
+
+
+## Local Development with Docker
+
+You can run the app locally with Docker to avoid machine-specific Node.js or package manager setup differences.
+
+```bash
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+To stop the app, press `Ctrl + C`, then run:
+
+```bash
+docker compose down
+```
+
+For detailed Docker setup, check commands, and troubleshooting, see [`docs/local-development.md`](docs/local-development.md).
