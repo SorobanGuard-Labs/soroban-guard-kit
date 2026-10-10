@@ -32,6 +32,16 @@ npm run dev
 
 Open http://localhost:3000.
 
+### Docker Development
+
+You can also run the application using Docker and Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+For detailed instructions, troubleshooting, and commands, see [docs/local-development.md](docs/local-development.md).
+
 ## Commands
 
 ```bash
